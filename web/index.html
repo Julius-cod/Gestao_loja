@@ -11,45 +11,116 @@
       <aside class="sidebar">
         <h1>DuoGestão</h1>
         <p class="subtitle">Mini mercado + Sopas</p>
-        <nav>
-          <a class="active" href="#">Dashboard</a>
-          <a href="#">Mini Mercado</a>
-          <a href="#">Encomendas de Sopa</a>
-          <a href="#">Finanças</a>
-          <a href="#">Recibos/Faturas</a>
-          <a href="#">Relatórios</a>
+        <nav id="nav-menu">
+          <button class="nav-link active" data-view="dashboard">Dashboard</button>
+          <button class="nav-link" data-view="produtos">Mini Mercado</button>
+          <button class="nav-link" data-view="encomendas">Encomendas de Sopa</button>
+          <button class="nav-link" data-view="financas">Finanças</button>
         </nav>
       </aside>
 
       <main class="content">
         <header class="topbar">
           <div>
-            <h2>Resumo Semanal</h2>
-            <p>Visão rápida da operação dos dois negócios.</p>
+            <h2 id="view-title">Resumo Semanal</h2>
+            <p id="view-subtitle">Visão rápida da operação dos dois negócios.</p>
           </div>
-          <button>+ Novo lançamento</button>
         </header>
 
-        <section class="kpis" id="kpis"></section>
+        <section id="view-dashboard" class="view">
+          <section class="kpis" id="kpis"></section>
+          <section class="grid-two">
+            <article class="card">
+              <h3>Últimas encomendas de sopa</h3>
+              <table>
+                <thead>
+                  <tr><th>Cliente</th><th>Qtd</th><th>Estado</th><th>Valor</th></tr>
+                </thead>
+                <tbody id="orders-table"></tbody>
+              </table>
+            </article>
 
-        <section class="grid-two">
+            <article class="card">
+              <h3>Produtos com stock baixo</h3>
+              <table>
+                <thead>
+                  <tr><th>Produto</th><th>Stock</th><th>Mínimo</th></tr>
+                </thead>
+                <tbody id="stock-table"></tbody>
+              </table>
+            </article>
+          </section>
+        </section>
+
+        <section id="view-produtos" class="view hidden">
+          <article class="card form-card">
+            <h3>Novo produto</h3>
+            <form id="product-form" class="form-grid">
+              <input name="nome" placeholder="Nome do produto" required />
+              <input name="preco" type="number" min="0" step="0.01" placeholder="Preço (€)" required />
+              <input name="stock" type="number" min="0" placeholder="Stock" required />
+              <input name="minimo" type="number" min="0" placeholder="Stock mínimo" required />
+              <button type="submit">Guardar produto</button>
+            </form>
+          </article>
           <article class="card">
-            <h3>Últimas encomendas de sopa</h3>
+            <h3>Produtos registados</h3>
+            <table>
+              <thead>
+                <tr><th>Produto</th><th>Preço</th><th>Stock</th><th>Mínimo</th></tr>
+              </thead>
+              <tbody id="products-table"></tbody>
+            </table>
+          </article>
+        </section>
+
+        <section id="view-encomendas" class="view hidden">
+          <article class="card form-card">
+            <h3>Nova encomenda de sopa</h3>
+            <form id="order-form" class="form-grid">
+              <input name="cliente" placeholder="Nome do cliente" required />
+              <input name="quantidade" type="number" min="1" placeholder="Quantidade" required />
+              <input name="valor" type="number" min="0" step="0.01" placeholder="Valor (€)" required />
+              <select name="estado" required>
+                <option value="Novo">Novo</option>
+                <option value="Em preparação">Em preparação</option>
+                <option value="Entregue">Entregue</option>
+              </select>
+              <button type="submit">Guardar encomenda</button>
+            </form>
+          </article>
+          <article class="card">
+            <h3>Encomendas registadas</h3>
             <table>
               <thead>
                 <tr><th>Cliente</th><th>Qtd</th><th>Estado</th><th>Valor</th></tr>
               </thead>
-              <tbody id="orders-table"></tbody>
+              <tbody id="orders-full-table"></tbody>
             </table>
           </article>
+        </section>
 
+        <section id="view-financas" class="view hidden">
+          <article class="card form-card">
+            <h3>Novo lançamento financeiro</h3>
+            <form id="finance-form" class="form-grid">
+              <select name="tipo" required>
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
+              </select>
+              <input name="categoria" placeholder="Categoria" required />
+              <input name="valor" type="number" min="0" step="0.01" placeholder="Valor (€)" required />
+              <input name="descricao" placeholder="Descrição" required />
+              <button type="submit">Guardar lançamento</button>
+            </form>
+          </article>
           <article class="card">
-            <h3>Produtos com stock baixo</h3>
+            <h3>Lançamentos</h3>
             <table>
               <thead>
-                <tr><th>Produto</th><th>Stock</th><th>Mínimo</th><th>Ação</th></tr>
+                <tr><th>Tipo</th><th>Categoria</th><th>Descrição</th><th>Valor</th></tr>
               </thead>
-              <tbody id="stock-table"></tbody>
+              <tbody id="finance-table"></tbody>
             </table>
           </article>
         </section>

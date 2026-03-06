@@ -46,3 +46,14 @@ cd web
 python3 -m http.server 4173
 ```
 Abrir: `http://localhost:4173`
+
+
+## Estado atual da base
+- A base já não é apenas estática: o protótipo em `web/` agora é interativo.
+- Já permite adicionar produtos, encomendas e lançamentos financeiros.
+- Os dados ficam guardados no navegador com `localStorage` (bom para demo, ainda sem backend).
+
+## Próximo passo recomendado
+1. Criar API real (NestJS) e base de dados (PostgreSQL).
+2. Trocar `localStorage` por persistência no backend.
+3. Adicionar autenticação e perfis (admin/operador).
