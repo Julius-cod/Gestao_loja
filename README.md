@@ -35,3 +35,14 @@ Se a utilizadora final ainda não sabe do projeto, siga um plano de execução s
 - `docs/plano-presente.md`: estratégia de MVP orientada a valor imediato
 - Preparar demo com dados realistas antes da apresentação
 - Coletar feedback só após primeira entrega
+
+## Demo inicial (já executável)
+
+Foi adicionado um protótipo funcional em `web/` para iniciar o projeto com uma interface profissional.
+
+### Como correr
+```bash
+cd web
+python3 -m http.server 4173
+```
+Abrir: `http://localhost:4173`
