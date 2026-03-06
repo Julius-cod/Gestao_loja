@@ -1,9 +1,10 @@
 # Roadmap de implementação (MVP → V2)
 
-## Fase 0 — Descoberta (3-5 dias)
-- Entrevista com utilizadora principal
-- Definição dos fluxos críticos
-- Protótipo de baixa fidelidade
+## Fase 0 — Descoberta adaptada (3-5 dias)
+- Mapeamento de fluxos padrão de micro negócio (sem entrevista inicial)
+- Definição dos fluxos críticos para demo: venda, encomenda, caixa e resumo
+- Protótipo de baixa fidelidade orientado a simplicidade
+- Preparação de base de dados com dados fictícios realistas
 
 ## Fase 1 — Fundação técnica (1 semana)
 - Setup de monorepo

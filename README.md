@@ -25,7 +25,24 @@ Sugestões de nome com perfil profissional:
 - `docs/mvp-roadmap.md`: plano de implementação por fases
 
 ## Próximos passos
-1. Validar os fluxos críticos com a sua tia (vendas, encomendas, despesas e relatórios).
+1. Definir os fluxos críticos para a demo (vendas, encomendas, despesas e relatórios), mesmo sem entrevista inicial.
 2. Definir stack final (sugestão: Next.js + NestJS + PostgreSQL).
 3. Construir MVP em 4 a 6 semanas com design system desde o início.
 4. Iterar em cima do feedback real de uso.
+
+## Modo presente (surpresa)
+Se a utilizadora final ainda não sabe do projeto, siga um plano de execução sem entrevista inicial:
+- `docs/plano-presente.md`: estratégia de MVP orientada a valor imediato
+- Preparar demo com dados realistas antes da apresentação
+- Coletar feedback só após primeira entrega
+
+## Demo inicial (já executável)
+
+Foi adicionado um protótipo funcional em `web/` para iniciar o projeto com uma interface profissional.
+
+### Como correr
+```bash
+cd web
+python3 -m http.server 4173
+```
+Abrir: `http://localhost:4173`

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DuoGestão — Painel</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1>DuoGestão</h1>
+        <p class="subtitle">Mini mercado + Sopas</p>
+        <nav>
+          <a class="active" href="#">Dashboard</a>
+          <a href="#">Mini Mercado</a>
+          <a href="#">Encomendas de Sopa</a>
+          <a href="#">Finanças</a>
+          <a href="#">Recibos/Faturas</a>
+          <a href="#">Relatórios</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <h2>Resumo Semanal</h2>
+            <p>Visão rápida da operação dos dois negócios.</p>
+          </div>
+          <button>+ Novo lançamento</button>
+        </header>
+
+        <section class="kpis" id="kpis"></section>
+
+        <section class="grid-two">
+          <article class="card">
+            <h3>Últimas encomendas de sopa</h3>
+            <table>
+              <thead>
+                <tr><th>Cliente</th><th>Qtd</th><th>Estado</th><th>Valor</th></tr>
+              </thead>
+              <tbody id="orders-table"></tbody>
+            </table>
+          </article>
+
+          <article class="card">
+            <h3>Produtos com stock baixo</h3>
+            <table>
+              <thead>
+                <tr><th>Produto</th><th>Stock</th><th>Mínimo</th><th>Ação</th></tr>
+              </thead>
+              <tbody id="stock-table"></tbody>
+            </table>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
